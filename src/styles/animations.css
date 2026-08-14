@@ -1,0 +1,152 @@
+/* ---------- Hero text reveal ---------- */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+.animate-reveal {
+  animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---------- Nav slide down ---------- */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-down {
+  animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---------- Reply bubble fade up ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---------- Voice Orb ---------- */
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+}
+.animate-breathe {
+  animation: breathe 4.5s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+.animate-ring {
+  animation: ringPulse 3s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+/* ---------- Mic button states ---------- */
+@keyframes micBreathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(108, 124, 224, 0.4), 0 0 26px rgba(108, 124, 224, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(108, 124, 224, 0), 0 0 40px rgba(108, 124, 224, 0.35);
+  }
+}
+.animate-mic-idle {
+  animation: micBreathe 3.2s ease-in-out infinite;
+}
+
+@keyframes rotateBorder {
+  to {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.animate-mic-thinking {
+  animation: rotateBorder 1.6s linear infinite;
+}
+
+@keyframes micPulseSpeak {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+.animate-mic-speaking {
+  animation: micPulseSpeak 0.6s ease-in-out infinite;
+}
+
+/* ---------- Waveform bars ---------- */
+@keyframes waveBar {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.animate-wave-bar {
+  animation: waveBar 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ---------- Flowing waveform ---------- */
+@keyframes wave-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
