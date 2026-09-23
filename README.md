@@ -1,4 +1,4 @@
-# EchoMind AI
+# Dexus
 
 A single centered assistant card: mute/reset icons, a live transcript, a
 flowing sine-wave visualizer, and a mic button overlapping the card's
